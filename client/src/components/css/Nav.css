@@ -1,0 +1,56 @@
+.fluid {
+  background-color: black;
+}
+.nav {
+  background-color: rgba(150, 135, 135, 0.336);
+}
+.nav__right a,
+.nav__right p {
+  color: rgb(243, 92, 46) !important;
+  transition-duration: 2s;
+}
+a:hover {
+  color: #afadad;
+}
+.nav__Search {
+  border-radius: 999px;
+  flex: 1;
+}
+.nav__right > a {
+  margin: 5px;
+}
+.bg-dark {
+  background-color: black !important;
+}
+.sign-in {
+  color: white;
+  font-size: 18px;
+}
+a:hover {
+  text-decoration: none;
+}
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+}
+.nav__brand {
+  color: white;
+  font-weight: 900;
+}
+.nav__right {
+  position: absolute;
+  top: 10px !important;
+  right: 10px !important;
+  font-weight: 500;
+  color: white;
+}
+.nav__right ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav__right li {
+  padding: 10px;
+  cursor: pointer;
+}

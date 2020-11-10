@@ -1,0 +1,31 @@
+.footer {
+  background-color: lightgrey;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-family: "Courgette", cursive;
+}
+.footer__left {
+  float: left;
+}
+.footer__right {
+  float: right;
+}
+.footer__middle > p {
+  display: block;
+}
+.upcoming_event {
+  margin-left: -10px;
+}
+.clear {
+  clear: both;
+}
+.social__link > p {
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .footer__middle {
+    margin-top: 20px;
+  }
+}
