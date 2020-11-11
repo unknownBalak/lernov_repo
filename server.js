@@ -8,7 +8,7 @@ import path from "path";
 //app confit
 //aplication instanse
 const app = express();
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3000;
 //middleware
 app.use(express.json());
 app.use(cors());
@@ -29,15 +29,17 @@ mongoose.connect(
 //??
 
 //api routes
-app.get("/", getRequest);
 
 app.post("/messages", postRequest);
 
 //production
 
-if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "staging") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  // app.use(express.static("client/build"));
 
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname + "build/index.html"));
+  });
   // });
 }
 
