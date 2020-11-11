@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
  import { Link } from 'react-router-dom';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 import './css/Footer.css'
 import instagram from './resources/insta_logo.png';
 import twitter from './resources/twitter_logo.png';

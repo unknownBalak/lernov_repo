@@ -5,20 +5,20 @@ import './css/Home.css'
 import Cards from './Cards';
 import img1 from './resources/2.jpg'
 import img2 from './resources/3.jpg'
+import backgroundimg from './resources/1(headway).jpg'
 class Home extends Component {
     
     render() {
         return (
             <>
             <div>
-             <img className='background-img 'xs={12}  md={8}  />
+             <img src={backgroundimg} className='background-img' alt="lernov-background" />
                
             </div>
         <Container>
             <Row className='home'>
                 <Col className='background-img1 'xs={12}  md={7}  >
    
-            {/* <Button className='bg__button'>Know More </Button>                     */}
                 </Col>
                 <Col className='banner__info'xs={12} md={4}>
     <h4>Our primary vision is <strong style={{color:"black"}} >Education to Everyone </strong> and we as a StartUp
