@@ -13,7 +13,8 @@ const port = process.env.PORT || 3002;
 app.use(express.json());
 app.use(cors());
 //DB config
-const url = "http://localhost:3002";
+const url =
+  "mongodb+srv://admin:sx6akNIArvB0phrT@cluster0.pm2os.mongodb.net/lernovDB?retryWrites=true&w=majority";
 mongoose.connect(
   process.env.MONGODB_URI || url,
   {
@@ -34,11 +35,11 @@ app.post("/messages", postRequest);
 
 //production
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "staging") {
   app.use(express.static("/client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  // });
 }
 
 //listen
