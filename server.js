@@ -8,7 +8,9 @@ import path from "path";
 //app confit
 //aplication instanse
 const app = express();
-const port = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, "client/build")));
+const port = process.env.PORT || 5000;
 //middleware
 app.use(express.json());
 app.use(cors());
@@ -36,12 +38,14 @@ app.post("/messages", postRequest);
 
 if (process.env.NODE_ENV === "production") {
   // app.use(express.static("client/build"));
-
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "build/index.html"));
-  });
+  // app.get("/", (req, res) => {
+  //   res.sendFile(path.join(__dirname + "build/index.html"));
   // });
-}
+  // });
 
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
+}
 //listen
-app.listen(port, () => console.log("listening the port 3002....."));
+app.listen(port, () => console.log(`listening the port ${port}.....`));
